@@ -1,0 +1,13 @@
+/* component/tab/tab.wxss */
+.scroll-tab{
+  height: 90rpx;
+}
+.filter-menu{
+  right: 0;
+  height: 100%;
+  background: #fff;
+  font-size: 60rpx;
+}
+.pr-filter{
+  padding-right: 104rpx;
+}

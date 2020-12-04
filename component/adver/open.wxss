@@ -1,0 +1,28 @@
+.cu-dialog{
+  width: 600rpx;
+  z-index: 1129;
+  background: none;
+}
+
+.f-mt{
+  margin-top: -70rpx;
+}
+
+.screen-swiper{
+  min-height: inherit;
+  height: calc(600rpx / 3 * 3.75);
+}
+
+.close-box{
+  display: inline-block;
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  border: thin solid rgba(255, 255, 255, .4);
+  line-height: 66rpx;
+  background: rgba(0, 0, 0, .35);
+}
+
+.nav{
+  height: 100%
+}

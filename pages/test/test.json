@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "tabbar":"/component/tabBar/index",
+    "dialog":"/component/dialog/dialog",
+    "tab":"/component/tab/tab"
+  } 
+}

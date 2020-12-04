@@ -1,0 +1,24 @@
+<!--component/tab/tab.wxml-->
+<view class='{{ fixed ? "fixed tfixed" : ""}} bg-white flex nav text-sms'>
+  <scroll-view scroll-x enable-flex scroll-with-animation class="scroll-tab flex flex-sub text-center {{ filterUrl ? 'pr-filter' : '' }}">  
+    <block wx:if="{{ type == 0}}">
+      <view class="cu-item flex-sub {{ index == TabCur ? 'text-green cur' : ''}}" wx:for="{{ tabs }}" wx:key='' bindtap="tabSelect" data-idx="{{index}}">
+        <text>{{ item }}</text>
+      </view>
+    </block>
+    <block wx:if="{{ type == 1}}">
+      <view class="cu-item flex-sub {{ item.value == TabCur ? 'text-green cur' : ''}}" wx:for="{{ tabs }}" wx:key='' bindtap="tabSelect" data-idx="{{ item.value }}">
+        <text>{{ item.title }}</text> 
+      </view>
+    </block>
+    <block wx:if="{{ type == 2}}">
+      <view class="cu-item flex-sub {{ item == TabCur ? 'text-green cur' : ''}}" wx:for="{{ tabsObj }}" wx:key='' bindtap="tabSelect" data-idx="{{ item }}">
+        <text>{{ index }}</text> 
+      </view>
+    </block>
+  </scroll-view>
+  <navigator wx:if='{{ filterUrl }}' url='{{ filterUrl }}' class='abs shadow shadow-lg filter-menu flex align-center'>
+    <text class='solid-left padding-left-sm padding-right-sm cuIcon-searchlist'></text>
+  </navigator>  
+</view>
+<view class='topHeight' wx:if="{{ fixed }}"></view>

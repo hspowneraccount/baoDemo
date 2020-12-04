@@ -1,0 +1,47 @@
+<view slot="selBtn" catchtap="setModel" data-idx="1">
+  <button class="cu-btn sm bg-white">
+    <text>{{ selObj.begin || '选择日期' }}</text>
+    <text class="cuIcon-calendar"></text>
+  </button>
+</view>
+
+<dialog show='{{ editModel > 0 }}' title='{{ editModel == 1 ? "请选择日期" : ""}}' maskClose="{{ false }}">
+  <view class="padding-xl solid-top bg-white">
+    <view class="padding-bottom-sm margin-bottom-xl flex justify-center">
+      <view class="cu-btn padding-0 round line-green">
+        <button class="cu-btn round {{ selType == 1 ? 'bg-green' : 'bg-white' }}" catchtap="setSelType" data-type="1">按日选择</button>
+        <button class="cu-btn round {{ selType == 2 ? 'bg-green' : 'bg-white' }}" catchtap="setSelType" data-type="2">按月选择</button>
+      </view>      
+    </view>
+    <view class="cu-bar flex justify-center align-start" style="line-height: 40rpx;">
+      <block wx:if="{{ selType == 1 }}">
+        <seldate key='selObj.begin'>
+          <view class="action border-title">
+            <text class="padding-lr-sm">{{ selObj.begin || "开始日期" }}</text>
+            <text class="bg-gray"></text>
+          </view>
+        </seldate>
+        <view>至</view>
+        <seldate key='selObj.end'>
+          <view class="action border-title">
+            <text class="padding-lr-sm">{{ selObj.end || "结束日期" }}</text>
+            <text class="bg-gray"></text>
+          </view>
+        </seldate>
+      </block>
+      <block wx:if="{{ selType == 2 }}">
+        <seldate key='selObj.month' dateLength="2">
+          <view class="action border-title">
+            <text class="padding-lr-sm">{{ selObj.month || "结束日期" }}</text>
+            <text class="bg-gray"></text>
+          </view>
+        </seldate>
+      </block>
+      <view class="cuIcon-delete" wx:if="{{selObj.begin || selObj.end || selObj.month}}" catchtap="clearDate"></view>
+    </view>
+  </view>  
+  <view class="cu-bar bg-white solid-top">
+    <view class="margin-0 flex-sub solid-right" catchtap="setModel" data-idx='0'>取消</view>
+    <view class="margin-0 flex-sub text-green" catchtap="selOk">完成</view>
+  </view>
+</dialog>

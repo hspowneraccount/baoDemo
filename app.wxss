@@ -1,0 +1,123 @@
+/**app.wxss**/
+@import 'colorui/font.wxss';
+@import "colorui/wubase.wxss";
+@import "colorui/iconfont.wxss";
+@import "colorui/icon.wxss";
+@import "colorui/main.wxss";
+@import "/miniprogram_npm/weui-miniprogram/weui-wxss/dist/style/weui.wxss"; 
+
+.f-din{
+  letter-spacing: -.5rpx;
+  font-family: DIN;
+}
+.f-din, .f-din .f-w{
+  font-weight: initial!important;
+}
+
+input::placeholder{
+  color: #aaaaaa;
+}
+
+.scrollPage {
+  height: 100vh;
+}
+
+.radius-10,.radius-10::after,.radius-10[class*="line"]::after{
+  border-radius: 10rpx!important;
+}
+
+.radius-20,.radius-20::after,.radius-20[class*="line"]::after {
+  border-radius: 20rpx!important;
+}
+
+.radius-30,.radius-30::after,.radius-30[class*="line"]::after {
+  border-radius: 30rpx!important;
+}
+
+.text-light {
+  font-weight: 300;
+}
+
+.rel{
+  position: relative;
+}
+
+.abs{
+  position: absolute;
+}
+
+.fixed{
+  position: fixed;
+}
+
+.tfixed{
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.bfixed{
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.p-all {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+}
+
+.topHeight{
+  height: 90rpx; 
+}
+
+.z2{
+  z-index: 2;
+}
+
+.z99{
+  z-index: 99;
+}
+
+.z9996{
+  z-index: 9996;
+}
+
+.z9999{
+  z-index: 9999;
+}
+
+.line-1{
+  line-height: 1;
+}
+
+.line-tab{
+  line-height: 1.8;
+}
+
+.basis-33{
+  width: 33.3333%;
+}
+.basis-25{
+  width: 25%;
+}
+.basis-100{
+  width: 100%;
+}
+.opacity-0{
+  opacity: 0;
+}
+.ov-h{
+  overflow: hidden;
+}
+.v-m{
+  vertical-align: middle
+}
+.text-sms{
+  font-size: 26rpx;
+}
+.text-nowrap{
+  white-space: nowrap;
+}

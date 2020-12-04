@@ -1,0 +1,2 @@
+/* component/toLoad/toLoad.wxss */
+@import "/app.wxss";

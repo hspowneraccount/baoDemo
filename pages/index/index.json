@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "dropdownmenu":"/component/dropdownmenu/dropdownmenu",
+    "mp-loading": "weui-miniprogram/loading/loading",
+    "mp-dialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog"  
+  }
+}

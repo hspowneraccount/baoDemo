@@ -1,0 +1,7 @@
+/* component/tab/tab.wxss */
+.cu-bar .action.border-title{
+  top: 0;
+}
+.cu-bar .action.border-title text[class*="bg-"]:last-child{
+  height: 4rpx;
+}

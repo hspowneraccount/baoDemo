@@ -1,0 +1,18 @@
+<block wx:if='{{ show && swiperList.length > 0}}'>
+  <view class="cu-modal show" style='background: none;'>
+    <view class='cu-modal show' catchtap="eventClose"></view>
+    <view class="cu-dialog text-right {{ closeBtn ? 'f-mt' : '' }}">
+      <view class="margin-bottom-sm close-box text-center" wx:if="{{ closeBtn }}" catchtap="eventClose">
+        <text class="cuIcon-close text-xl text-white"></text>
+      </view>      
+      <swiper class="radius-10 ov-h screen-swiper {{DotStyle ? 'square-dot' : 'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+        <swiper-item wx:for="{{swiperList}}" wx:key>
+          <navigator class="nav" url="/pages/webview/index?type=1&url={{ item.ad_link }}">
+            <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+            <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+          </navigator> 
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+</block>

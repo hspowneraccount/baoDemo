@@ -1,0 +1,54 @@
+<view class="z99 rel" wx:if="{{ menuObj.data.length > 0 }}">
+  <view class="flex text-center bg-white line-tab">
+    <slot name="left"></slot>
+    <block wx:for="{{ menuObj.data }}" wx:key="">
+      <view class="padding-tb-sm flex-sub drop-menu {{ menuObj.drop_type == item.key ? 'text-green' : '' }}" data-item="{{ item }}" catchtap="setDropdown">
+        <text class="text-sms {{ item.value && item.value != item.dvalue ? 'text-green' : '' }}">{{ item.name }}</text>
+        <text class="cuIcon-triangledownfill"></text>
+      </view>
+    </block>
+    <slot name="right"></slot>
+  </view>
+
+  <view class="solid-top ov-h">
+    <block wx:for="{{ menuObj.data }}" wx:key="" wx:for-index="pidx">
+      <block wx:if="{{ item.type == 'grid_btn' }}">
+        <view class="grid col-2 padding-sm bg-white {{ menuObj.drop_type == item.key ? 'slidedown' : '' }}"  hidden="{{ menuObj.drop_type != item.key }}">
+          <block wx:for="{{ item.data }}" wx:for-item="grid" wx:key="">
+            <view class="padding-sm">
+              <button class="cu-btn basis-100 {{ item.value == grid.value ? 'line-green' : 'line-gray'}}" data-grid="{{ grid }}" data-pidx="{{ pidx }}" catchtap="setGridItem">{{ grid.name }}</button>
+            </view>
+          </block>        
+        </view>
+      </block>
+
+      <block wx:if="{{ item.type == 'search' }}">
+        <view class="bg-white {{ menuObj.drop_type == item.key ? 'slidedown' : '' }}" hidden="{{ menuObj.drop_type != item.key }}">
+          <view class="cu-bar search">
+            <view class="search-form radius">
+              <text class="cuIcon-search"></text>
+              <input type="text" value="{{ item.value }}" placeholder="{{ item.placeholder }}" data-pidx="{{ pidx }}" confirm-type="search" bindconfirm="toSearch" bindinput="setValue"></input>
+            </view>
+            <view class="action" bindtap="toSearch">
+              <text>搜索</text>
+            </view>
+          </view>
+
+          <view class="grid col-2 padding-sm" wx:if="{{ item.list && item.list.type == 'grid_btn' }}">
+            <block wx:for="{{ item.list.data }}" wx:for-item="childGrid" wx:key="">
+              <view class="padding-sm">
+                <button class="cu-btn basis-100 {{ childGrid.value == item.list.value ? 'line-green' : 'line-gray'}}" data-grid="{{ childGrid }}" data-pidx="{{ pidx }}" data-tier="2" catchtap="setGridItem">{{ childGrid.name }}</button>
+              </view>
+            </block>
+          </view>
+
+          <view class="margin-top-xl padding-tb-xl text-center" wx:else>
+            <button class="cu-btn line-grey text-sm basis-25" data-pidx="{{ pidx }}" catchtap="resetSearch">重置</button>
+          </view>
+        </view>
+      </block>
+    </block>
+  </view>
+</view>
+
+<view class="cu-modal show z2" catchtap="modelClose" hidden="{{ !menuObj.drop_type }}"></view>

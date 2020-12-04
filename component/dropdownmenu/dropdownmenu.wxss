@@ -1,0 +1,39 @@
+/* component/tab/tab.wxss */
+.scroll-tab{
+  height: 90rpx;
+}
+.filter-menu{
+  right: 0;
+  height: 100%;
+  background: #fff;
+  font-size: 60rpx;
+}
+.pr-filter{
+  padding-right: 104rpx;
+}
+.drop-menu.text-green .cuIcon-triangledownfill{
+  display: inline-block;
+  transform: rotate(180deg);
+}
+.slidedown {
+  animation: slidedown 0.3s linear forwards;
+}
+@keyframes slidedown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+.slideup {
+  animation: slideup 0.5s linear forwards;
+}
+@keyframes slideup {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}

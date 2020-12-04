@@ -1,0 +1,20 @@
+<view class="tabbar_box_h {{isIphoneX ? 'iphoneX-height':''}}"></view>
+<view class="tabbar_box {{isIphoneX ? 'iphoneX-height':''}}" style="background-color:{{tabbar.backgroundColor}}">
+  <block wx:for="{{tabbar.list}}" wx:if='{{ item.pagePath }}' wx:key="{{item.pagePath}}">
+    <navigator wx:if="{{item.isSpecial}}" class="tabbar_nav" hover-class="none" url="{{item.pagePath}}" style="color:{{item.selected ? tabbar.selectedColor : tabbar.color}}" open-type="switchTab" data-idx="{{ index }}">
+      <view class='p-a special-wrapper'></view>
+      <view class="special-box">
+        <image wx:if="{{ item.gif }}" class="tabbar_icon" src="{{ ossdomain + item.gifUrl}}"></image>
+        <image wx:else class="tabbar_icon" src="{{item.selected ? item.selectedIconPath : item.iconPath}}"></image>
+        <view>
+          <image class="vip-img" src="{{item.isSpecial}}"></image>
+        </view>        
+      </view>
+    </navigator>
+    <navigator wx:else class="tabbar_nav" hover-class="none" url="{{item.pagePath}}" style="color:{{item.selected ? tabbar.selectedColor : tabbar.color}}" open-type="switchTab" data-idx="{{ index }}">
+      <image wx:if="{{ item.gif }}" class="tabbar_icon" src="{{ ossdomain + item.gifUrl}}"></image>
+      <image wx:else class="tabbar_icon" src="{{item.selected ? item.selectedIconPath : item.iconPath}}"></image>
+      <text>{{item.text}}</text>
+    </navigator>
+  </block>
+</view>

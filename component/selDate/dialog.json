@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "seldate": "./index",
+    "dialog": "../dialog/dialog"
+  }
+}

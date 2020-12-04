@@ -1,0 +1,31 @@
+<!-- <view class="iconfont iconicon-test " > -->
+<view class="iconfont iconicon-test " bindtap="savePhoto" >
+111111
+    <dialog show="{{true}}" title="标题" closeBtn="{{true}}">
+      <view class='cu-list menu'>
+        <view class='cu-item' catchtap='makePhone' data-tel='{{ siteInfo.service_phone }}'>
+          <!-- <view class='content' wx:if="{{ siteInfo.service_phone != ''}}">联系电话：{{ siteInfo.service_phone }}</view> -->
+          <!-- <view class='content' wx:else>联系电话：4009700321</view> -->
+          <view class='content' >联系电话：4009700321</view>
+          <view class='action text-xxl'>
+            <view class='cu-tag round bg-blue light'>
+              <text class="cuIcon-phone"></text>
+            </view>
+          </view>
+        </view>
+        <view class='cu-item' catchtap='copyWx' data-text='{{ siteInfo.service_wechat }}'>
+          <!-- <view class='content' wx:if="{{ siteInfo.service_wechat != ''}}">联系微信：{{ siteInfo.service_wechat }}</view> -->
+           <!-- <view class='content' wx:else>联系微信：axc_chongdian</view> -->
+           <view class='content' >联系微信：axc_chongdian</view>
+          <view class='action text-xxl'>
+            <view class='cu-tag round bg-olive light'>
+              <text class="cuIcon-copy"></text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </dialog>
+     
+
+</view>   
+<tab tabs="{{tabs}}" fixed="{{false}}" TabCur='{{ TabCur }}' bind:tabSelect="tabSelect"></tab>

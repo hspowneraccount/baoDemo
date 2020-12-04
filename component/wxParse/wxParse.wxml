@@ -1,0 +1,3 @@
+<block wx:for="{{ wxParseData.nodes }}" wx:key="">
+  <templateItem item="{{ item }}"></templateItem>
+</block>

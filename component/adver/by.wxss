@@ -1,0 +1,6 @@
+.screen-swiper{
+  min-height: initial
+}
+.nav{
+  height: 100%
+}

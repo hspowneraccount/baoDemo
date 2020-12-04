@@ -1,0 +1,6 @@
+<!--component/toLoad/toLoad.wxml-->
+<view  class='margin-top-xl padding-top-xl text-center text-sm text-gray' wx:if='{{ totalPage == 0 }}'>
+  <view class='margin-bottom-sm text-xsl' style='opacity: .6;'><text class='cuIcon-goodsnew'></text></view>
+  {{ noText }}
+</view>
+<view wx:else class='cu-load {{ load ? "loading" : "over"}}  '></view>
